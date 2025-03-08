@@ -1,0 +1,24 @@
+<h1>REGISTER</h1>
+<style>
+    h3{color: red;}
+</style>
+{% for message in messages %}
+<h3>{{message }}</h3>
+{% endfor %}
+<form method="POST">
+    {% csrf_token %}
+    <p>Username</p>
+    <input type="text" name="username" required>
+    
+    <p>password</p>
+    <input type="password" name="password" required>
+
+    <p>confirm password</p>
+    <input type="password" name="cpassword" required><br><br>
+    <input type="submit">
+</form>
+
+<p style="color: orange;">Already have a account? </p>
+<a href="login">
+    <button>Login</button>
+</a>
